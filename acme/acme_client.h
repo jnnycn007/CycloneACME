@@ -6,7 +6,7 @@
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
- * Copyright (C) 2019-2025 Oryx Embedded SARL. All rights reserved.
+ * Copyright (C) 2019-2026 Oryx Embedded SARL. All rights reserved.
  *
  * This file is part of CycloneACME Open.
  *
@@ -25,7 +25,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @author Oryx Embedded SARL (www.oryx-embedded.com)
- * @version 2.5.4
+ * @version 2.6.0
  **/
 
 #ifndef _ACME_CLIENT_H
@@ -66,13 +66,13 @@
 #endif
 
 //Version string
-#define CYCLONE_ACME_VERSION_STRING "2.5.4"
+#define CYCLONE_ACME_VERSION_STRING "2.6.0"
 //Major version
 #define CYCLONE_ACME_MAJOR_VERSION 2
 //Minor version
-#define CYCLONE_ACME_MINOR_VERSION 5
+#define CYCLONE_ACME_MINOR_VERSION 6
 //Revision number
-#define CYCLONE_ACME_REV_NUMBER 4
+#define CYCLONE_ACME_REV_NUMBER 0
 
 //ACME client support
 #ifndef ACME_CLIENT_SUPPORT
@@ -566,6 +566,7 @@ struct _AcmeClientContext
 {
    AcmeClientState state;                                     ///<ACME client state
    AcmeRequestState requestState;                             ///<HTTP request state
+   NetContext *netContext;                                    ///<TCP/IP stack context
    NetInterface *interface;                                   ///<Underlying network interface
    systime_t timeout;                                         ///<Timeout value
    const PrngAlgo *prngAlgo;                                  ///<Pseudo-random number generator to be used
