@@ -25,7 +25,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @author Oryx Embedded SARL (www.oryx-embedded.com)
- * @version 2.6.0
+ * @version 2.6.2
  **/
 
 //Switch to the appropriate trace level
@@ -749,7 +749,7 @@ error_t acmeClientFormatKeyChangeRequest(AcmeClientContext *context,
    {
       //The inner JWS becomes the payload for the outer JWS that is the body
       //of the ACME request
-      payload = jsonp_strdup(context->buffer);
+      payload = jsonp_strndup(context->buffer, osStrlen(context->buffer));
 
       //Valid JSON representation?
       if(payload != NULL)

@@ -25,7 +25,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @author Oryx Embedded SARL (www.oryx-embedded.com)
- * @version 2.6.0
+ * @version 2.6.2
  **/
 
 #ifndef _ACME_CLIENT_H
@@ -35,7 +35,7 @@
 #include "acme_config.h"
 #include "core/net.h"
 #include "http/http_client.h"
-#include "tls.h"
+#include "tls/tls.h"
 #include "pkix/x509_common.h"
 
 
@@ -66,13 +66,13 @@
 #endif
 
 //Version string
-#define CYCLONE_ACME_VERSION_STRING "2.6.0"
+#define CYCLONE_ACME_VERSION_STRING "2.6.2"
 //Major version
 #define CYCLONE_ACME_MAJOR_VERSION 2
 //Minor version
 #define CYCLONE_ACME_MINOR_VERSION 6
 //Revision number
-#define CYCLONE_ACME_REV_NUMBER 0
+#define CYCLONE_ACME_REV_NUMBER 2
 
 //ACME client support
 #ifndef ACME_CLIENT_SUPPORT
