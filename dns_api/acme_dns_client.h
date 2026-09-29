@@ -25,7 +25,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @author Oryx Embedded SARL (www.oryx-embedded.com)
- * @version 2.6.4
+ * @version 2.6.6
  **/
 
 #ifndef _ACME_DNS_CLIENT_H
@@ -99,14 +99,19 @@
    #error ACME_DNS_CLIENT_MAX_FULL_DOMAIN_LEN parameter is not valid
 #endif
 
-//TXT record length
-#define ACME_DNS_TXT_RECORD_LEN 43
+//Application specific context
+#ifndef ACME_DNS_CLIENT_CONTEXT_PRIVATE
+   #define ACME_DNS_CLIENT_CONTEXT_PRIVATE
+#endif
 
 //TLS supported?
 #if (ACME_DNS_CLIENT_TLS_SUPPORT == ENABLED)
    #include "core/crypto.h"
    #include "tls/tls.h"
 #endif
+
+//TXT record length
+#define ACME_DNS_TXT_RECORD_LEN 43
 
 //Forward declaration of AcmeDnsClientContext structure
 struct _AcmeDnsClientContext;
@@ -174,6 +179,7 @@ struct _AcmeDnsClientContext
    size_t bufferLen;                                           ///<Length of the buffer, in bytes
    size_t bufferPos;                                           ///<Current position in the buffer
    uint_t statusCode;                                          ///<HTTP status code
+   ACME_DNS_CLIENT_CONTEXT_PRIVATE                             ///<Application specific context
 };
 
 

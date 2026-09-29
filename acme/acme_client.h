@@ -25,7 +25,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @author Oryx Embedded SARL (www.oryx-embedded.com)
- * @version 2.6.4
+ * @version 2.6.6
  **/
 
 #ifndef _ACME_CLIENT_H
@@ -66,13 +66,13 @@
 #endif
 
 //Version string
-#define CYCLONE_ACME_VERSION_STRING "2.6.4"
+#define CYCLONE_ACME_VERSION_STRING "2.6.6"
 //Major version
 #define CYCLONE_ACME_MAJOR_VERSION 2
 //Minor version
 #define CYCLONE_ACME_MINOR_VERSION 6
 //Revision number
-#define CYCLONE_ACME_REV_NUMBER 4
+#define CYCLONE_ACME_REV_NUMBER 6
 
 //ACME client support
 #ifndef ACME_CLIENT_SUPPORT
@@ -239,8 +239,8 @@
 #endif
 
 //Application specific context
-#ifndef ACME_CLIENT_PRIVATE_CONTEXT
-   #define ACME_CLIENT_PRIVATE_CONTEXT
+#ifndef ACME_CLIENT_CONTEXT_PRIVATE
+   #define ACME_CLIENT_CONTEXT_PRIVATE
 #endif
 
 //Forward declaration of AcmeClientContext structure
@@ -598,7 +598,7 @@ struct _AcmeClientContext
    char_t errorType[ACME_CLIENT_MAX_URN_LEN + 1];             ///<ACME error type
    uint_t badNonceErrors;                                     ///<Number of consecutive bad nonce errors
    size_t certChainLen;                                       ///<Length of the certificate chain, in bytes
-   ACME_CLIENT_PRIVATE_CONTEXT                                ///<Application specific context
+   ACME_CLIENT_CONTEXT_PRIVATE                                ///<Application specific context
 };
 
 
